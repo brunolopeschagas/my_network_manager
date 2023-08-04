@@ -5,11 +5,13 @@ import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Collection;
+import java.util.Random;
 
 import javax.transaction.Transactional;
 
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.com.mynetwork.mynetwork.enumeration.Status;
 import br.com.mynetwork.mynetwork.model.Server;
@@ -63,13 +65,15 @@ public class ServerServiceImplementation implements ServerService {
 
     @Override
     public boolean delete(Long id) {
-       log.info("Deleting server: {}", id);
-       serverRepository.deleteById(id);
-       return true;
+        log.info("Deleting server: {}", id);
+        serverRepository.deleteById(id);
+        return true;
     }
 
     private String setServerImageUrl() {
-        return null;
+        String[] imageNames = { "server1.png", "server2.png", "server3.png", "server4.png", };
+        String path = "/server/image/" + imageNames[new Random().nextInt(4)];
+        return ServletUriComponentsBuilder.fromCurrentContextPath().path(path).toUriString();
     }
 
 }

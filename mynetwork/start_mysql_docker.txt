@@ -1,0 +1,5 @@
+docker run -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -v /home/bruno/dev/databases/mysql:/var/lib/mysql mysql
+docker container ls
+docker container inspect <id_do_container>
+docker exec -it <id_do_container> bash
+mysql -u root
