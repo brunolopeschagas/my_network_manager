@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MynetworkApplication<mynetwork>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.com.mynetwork.mynetwork.MynetworkApplication",
+            "projectName": "mynetwork",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
